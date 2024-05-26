@@ -1,0 +1,60 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+---
+
+<header class="bg-white dark:bg-gray-900">
+  <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <div class="flex-1 md:flex md:items-center md:gap-12">
+        <a class="block text-teal-600 dark:text-teal-400" href="#">
+          <i class="material-icons">terminal</i>
+        </a>
+      </div>
+
+      <div class="md:flex md:items-center md:gap-12">
+        <nav aria-label="Global" class="hidden md:block">
+          <ul class="flex items-center gap-6 text-sm">
+            <li>
+              <a class="text-gray-500 transition hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300" href="#">
+                About
+              </a>
+            </li>
+            <li>
+              <a class="text-gray-500 transition hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300" href="#">
+                Projects
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="flex items-center gap-4">
+          <ThemeToggle />
+          <!-- Botón de menú de hamburguesa -->
+          <button id="menu-button" class="md:hidden text-gray-500 transition hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 focus:outline-none">
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menú desplegable para móviles -->
+  <div id="mobile-menu" class="hidden md:hidden">
+    <nav aria-label="Global">
+      <ul class="flex flex-col items-start gap-6 text-sm px-4 py-4">
+        <li>
+          <a class="text-gray-500 transition hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300" href="#">
+            About
+          </a>
+        </li>
+        <li>
+          <a class="text-gray-500 transition hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300" href="#">
+            Projects
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

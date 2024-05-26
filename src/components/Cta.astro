@@ -1,0 +1,54 @@
+---
+interface Props {
+  lang: string;
+}
+---
+
+<section class="overflow-hidden bg-gray-50 dark:bg-gray-900 sm:grid sm:grid-cols-2">
+  <div class="p-8 md:p-12 lg:px-16 lg:py-24">
+    <div class="mx-auto max-w-xl text-center sm:text-left">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 md:text-3xl typing-animation">
+        Hola! Soy Juan Diego.
+      </h2>
+      <p class="text-gray-500 dark:text-gray-400 md:mt-4">
+        Soy un desarrollador fullstack middle con 2 años de experiencia en la creación de soluciones innovadoras y eficientes.
+      </p>
+      <div class="mt-4 md:mt-8">
+        <a
+          download
+          href="./../../public/pdf/my_cv.pdf"
+          class="inline-block rounded bg-teal-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-emerald-700 dark:bg-teal-700 dark:hover:bg-emerald-600 focus:outline-none focus:ring focus:ring-yellow-400"
+        >
+          Obtener hoja de vida
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <img
+    alt="Juan Diego"
+    src="./../../public/assets/me.JPG"
+    class="h-64 w-auto max-w-xs sm:max-w-md lg:max-w-lg mx-auto object-cover sm:h-80 rounded"
+  />
+</section>
+
+<style>
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+  }
+
+  .typing-animation {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0.15em solid black; /* Cambia el color del cursor aquí */
+    animation: typing 2.5s steps(40, end), blink 0.75s step-end infinite;
+    width: fit-content; /* Para ajustar el ancho al contenido */
+    display: inline-block; /* Para asegurarse de que el ancho se ajuste al texto */
+  }
+</style>

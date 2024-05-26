@@ -1,0 +1,52 @@
+---
+const skills: {name: string, logo: string, progress: string}[] = [
+  { name: 'JavaScript', logo: '../../public/assets/javascript.svg', progress: 'full' },
+  { name: 'TypeScript', logo: '../../public/assets/typescript.svg', progress: 'full' },
+  { name: 'NestJS', logo: '../../public/assets/nestjs.svg', progress: 'full' },
+  { name: 'ExpressJS', logo: '../../public/assets/express.svg', progress: 'full' },
+  { name: 'MongoDB', logo: '../../public/assets/mongodb.svg', progress: 'full' },
+  { name: 'PostgreSQL', logo: '../../public/assets/postgresql.svg', progress: 'full' },
+  { name: 'React', logo: '../../public/assets/react.svg', progress: 'full' },
+  { name: 'Astro', logo: '../../public/assets/astro.svg', progress: 'partial' },
+  { name: 'Spring Boot', logo: '../../public/assets/springboot.svg', progress: 'partial' },
+];
+
+const fullSkills = skills.filter(skill => skill.progress === 'full');
+const partialSkills = skills.filter(skill => skill.progress === 'partial');
+---
+
+<div class="flex flex-col items-center gap-8 bg-white p-1 dark:bg-gray-900 dark:text-white mx-auto py-10">
+  <div class="flex flex-col items-center gap-4">
+    <h2 class="text-xl font-bold">Tecnologías:</h2>
+    <div class="flex flex-wrap justify-center items-center gap-4">
+      {fullSkills.map(skill => (
+        <div class="flex flex-col items-center" key={skill.name}>
+          <div class={`w-16 h-16 relative svg-icon dark:dark-svg-filter`}>
+            <img src={skill.logo} alt={skill.name} class="absolute top-0 left-0 w-full h-full" />
+          </div>
+          <span class="mt-2">{skill.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+  
+  <div class="flex flex-col items-center gap-4">
+    <h2 class="text-xl font-bold">Actualmente aprendiendo:</h2>
+    <div class="flex flex-wrap justify-center items-center gap-4">
+      {partialSkills.map(skill => (
+        <div class="flex flex-col items-center" key={skill.name}>
+          <div class={`w-16 h-16 relative svg-icon dark:dark-svg-filter`}>
+            <img src={skill.logo} alt={skill.name} class="absolute top-0 left-0 w-full h-full" />
+          </div>
+          <span class="mt-2">{skill.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .dark-svg-filter img {
+    filter: invert(1);
+  }
+</style>
