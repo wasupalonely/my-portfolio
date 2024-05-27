@@ -1,0 +1,1 @@
+import"./hoisted.hmNxfLw-.js";document.addEventListener("DOMContentLoaded",function(){const o=document.getElementById("back-to-top");window.addEventListener("scroll",()=>{window.scrollY>300?o.classList.remove("hidden"):o.classList.add("hidden")}),o.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})})});
