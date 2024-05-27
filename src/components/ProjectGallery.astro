@@ -13,21 +13,6 @@ const getTechnologies = (technologies: string[]) => {
   });
 };
 
-const getMobileOperatingSystem = () => {
-  const userAgent = navigator.userAgent || window.opera;
-
-  if (/android/i.test(userAgent)) {
-    return "Android";
-  }
-
-  if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-    return "iOS";
-  }
-
-  return "unknown";
-};
-
-const os = getMobileOperatingSystem();
 ---
 
 <div id="projects-section" class="px-10 bg-white pt-10 dark:bg-gray-900">
@@ -35,7 +20,7 @@ const os = getMobileOperatingSystem();
     Proyectos en los que participé:
   </h2>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {projects.map((project, index) => (
+    {projects.map((project) => (
       <div class="relative border rounded-lg overflow-hidden shadow-lg group dark:bg-gray-900 dark:border-gray-700">
         <img
           src={project.imageUrl}
@@ -52,23 +37,7 @@ const os = getMobileOperatingSystem();
             title="Tecnologías utilizadas"
             technologies={getTechnologies(project.technologies)}
           />
-          {project.androidLink && os === "Android" ? (
-            <a
-              href={project.androidLink}
-              target="_blank"
-              class="text-white text-lg font-semibold bg-teal-500 py-2 px-4 rounded hover:bg-teal-600 dark:bg-teal-600 dark:hover:bg-teal-600"
-            >
-              Ir al proyecto en Play Store
-            </a>
-          ) : project.iosLink && os === "iOS" ? (
-            <a
-              href={project.iosLink}
-              target="_blank"
-              class="text-white text-lg font-semibold bg-teal-500 py-2 px-4 rounded hover:bg-teal-600 dark:bg-teal-600 dark:hover:bg-teal-600"
-            >
-              Ir al proyecto en App Store
-            </a>
-          ) : project.link ? (
+          {project.link ? (
             <a
               href={project.link}
               target="_blank"
