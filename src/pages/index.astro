@@ -8,15 +8,15 @@ import ProjectGallery from "../components/ProjectGallery.astro";
 const lang = "es";
 
 const skills = [
-  { name: 'JavaScript', logo: '../../public/assets/javascript.svg', progress: 'full' },
-  { name: 'TypeScript', logo: '../../public/assets/typescript.svg', progress: 'full' },
-  { name: 'NestJS', logo: '../../public/assets/nestjs.svg', progress: 'full' },
-  { name: 'ExpressJS', logo: '../../public/assets/express.svg', progress: 'full' },
-  { name: 'MongoDB', logo: '../../public/assets/mongodb.svg', progress: 'full' },
-  { name: 'PostgreSQL', logo: '../../public/assets/postgresql.svg', progress: 'full' },
-  { name: 'React', logo: '../../public/assets/react.svg', progress: 'full' },
-  { name: 'Astro', logo: '../../public/assets/astro.svg', progress: 'partial' },
-  { name: 'Spring Boot', logo: '../../public/assets/springboot.svg', progress: 'partial' },
+  { name: 'JavaScript', logo: '/assets/javascript.svg', progress: 'full' },
+  { name: 'TypeScript', logo: '/assets/typescript.svg', progress: 'full' },
+  { name: 'NestJS', logo: '/assets/nestjs.svg', progress: 'full' },
+  { name: 'ExpressJS', logo: '/assets/express.svg', progress: 'full' },
+  { name: 'MongoDB', logo: '/assets/mongodb.svg', progress: 'full' },
+  { name: 'PostgreSQL', logo: '/assets/postgresql.svg', progress: 'full' },
+  { name: 'React', logo: '/assets/react.svg', progress: 'full' },
+  { name: 'Astro', logo: '/assets/astro.svg', progress: 'partial' },
+  { name: 'Spring Boot', logo: '/assets/springboot.svg', progress: 'partial' },
 ];
 
 const fullSkills = skills.filter(skill => skill.progress === 'full');
