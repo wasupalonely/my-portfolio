@@ -7,7 +7,6 @@ import ProjectGallery from "../components/ProjectGallery.astro";
 
 const lang = "es";
 
-
 const skills = [
   { name: 'JavaScript', logo: '../../public/assets/javascript.svg', progress: 'full' },
   { name: 'TypeScript', logo: '../../public/assets/typescript.svg', progress: 'full' },
@@ -26,18 +25,31 @@ const partialSkills = skills.filter(skill => skill.progress === 'partial');
 
 <Layout title="Juan Diego Macias." lang={lang}>
   <Cta lang={lang} />
-  <Skills title="Tecnologías" technologies={fullSkills} isProjectComponent={false}/>
-  <Skills title="Actualmente aprendiendo" technologies={partialSkills} isProjectComponent={false}/>
+  <Skills title="Tecnologías" technologies={fullSkills} isProjectComponent={false} />
+  <Skills title="Actualmente aprendiendo" technologies={partialSkills} isProjectComponent={false} />
   <ProjectGallery />
+  <button id="back-to-top" class="fixed bottom-4 right-4 hidden bg-teal-600 text-white p-4 rounded-full shadow-lg hover:bg-teal-700 dark:bg-teal-700 dark:hover:bg-teal-600">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
 </Layout>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const menuButton = document.getElementById("menu-button");
-    const mobileMenu = document.getElementById("mobile-menu");
+    // Lógica para mostrar/ocultar el botón de regresar al tope
+    const backToTopButton = document.getElementById('back-to-top');
 
-    menuButton!.addEventListener("click", function () {
-      mobileMenu!.classList.toggle("hidden");
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton!.classList.remove('hidden');
+      } else {
+        backToTopButton!.classList.add('hidden');
+      }
+    });
+
+    backToTopButton!.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
 </script>
@@ -56,7 +68,7 @@ const partialSkills = skills.filter(skill => skill.progress === 'partial');
     position: absolute;
     top: -32px;
     left: 50%;
-    transform: translatex(-50%);
+    transform: translateX(-50%);
     width: 220px;
     height: auto;
     z-index: -1;
