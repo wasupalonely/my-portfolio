@@ -6,7 +6,7 @@ const getTechnologies = (technologies: string[]) => {
   return technologies.map((tech) => {
     const skill = {
       name: tech,
-      logo: `./../../public/assets/${tech.toLowerCase()}.svg`,
+      logo: `/assets/${tech.toLowerCase()}.svg`,
       progress: "full",
     };
     return skill;

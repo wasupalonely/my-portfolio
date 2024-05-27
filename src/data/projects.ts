@@ -16,7 +16,7 @@ export const projects: Project[] = [
     title: "Storiesi",
     description:
       "Participe en el desarrollo de una api rest para una una aplicación móvil de red social para escritores",
-    imageUrl: "./../../public/assets/storiesi.jpg",
+    imageUrl: "/assets/storiesi.jpg",
     details: "Detalles completos del Proyecto 1...",
     technologies: ["Postgresql", "Nestjs"],
     link: "",
@@ -26,7 +26,7 @@ export const projects: Project[] = [
     title: "Scouting",
     description:
       "Participé en el desarollo de una aplicación móvil para la reserva de lugares para que artistas lleven a cabo diferentes tipos de eventos",
-    imageUrl: "./../../public/assets/scouting.jpg",
+    imageUrl: "/assets/scouting.jpg",
     details: "Detalles completos del Proyecto 2...",
     technologies: ["React Native", "Firebase"],
     link: "",
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     slug: "proyecto-3",
     title: "Quicook",
     description: "Proyecto desarrollado de la mano de No Country y un gran grupo de trabajo, en el que desarrollé una api con Expressjs, MongoDB, usando passport y manejo de roles",
-    imageUrl: "./../../public/assets/quicook.jpeg",
+    imageUrl: "/assets/quicook.jpeg",
     details: "Detalles completos del Proyecto 3...",
     technologies: ["Express", "MongoDB"],
     link: "https://nocountry-frontend.onrender.com/",
