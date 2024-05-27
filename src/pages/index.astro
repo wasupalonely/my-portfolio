@@ -3,13 +3,32 @@ import Layout from "../layouts/Layout.astro";
 import Cta from "../components/Cta.astro";
 import Skills from "../components/Skills.astro";
 import "./../styles.css";
+import ProjectGallery from "../components/ProjectGallery.astro";
 
 const lang = "es";
+
+
+const skills = [
+  { name: 'JavaScript', logo: '../../public/assets/javascript.svg', progress: 'full' },
+  { name: 'TypeScript', logo: '../../public/assets/typescript.svg', progress: 'full' },
+  { name: 'NestJS', logo: '../../public/assets/nestjs.svg', progress: 'full' },
+  { name: 'ExpressJS', logo: '../../public/assets/express.svg', progress: 'full' },
+  { name: 'MongoDB', logo: '../../public/assets/mongodb.svg', progress: 'full' },
+  { name: 'PostgreSQL', logo: '../../public/assets/postgresql.svg', progress: 'full' },
+  { name: 'React', logo: '../../public/assets/react.svg', progress: 'full' },
+  { name: 'Astro', logo: '../../public/assets/astro.svg', progress: 'partial' },
+  { name: 'Spring Boot', logo: '../../public/assets/springboot.svg', progress: 'partial' },
+];
+
+const fullSkills = skills.filter(skill => skill.progress === 'full');
+const partialSkills = skills.filter(skill => skill.progress === 'partial');
 ---
 
-<Layout title="Welcome to Astro." lang={lang}>
+<Layout title="Juan Diego Macias." lang={lang}>
   <Cta lang={lang} />
-  <Skills />
+  <Skills title="Tecnologías" technologies={fullSkills} isProjectComponent={false}/>
+  <Skills title="Actualmente aprendiendo" technologies={partialSkills} isProjectComponent={false}/>
+  <ProjectGallery />
 </Layout>
 
 <script>
